@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart EdTech-1 - Personalized Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>Smart EdTech-1</h2>
+                <span class="tagline">ECTEC-1</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#boards">Boards</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="btn-login" onclick="showSignInModal()">Login</button>
+                <button class="btn-signup" onclick="showOnboardingForm()">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Personalized Learning Platform</h1>
+            <p>Adaptive education for CBSE, ICSE, and State Boards that adapts to your child's learning style</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Start Learning</button>
+                <button class="btn-secondary">Watch Demo</button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">50,000+</span>
+                <span class="stat-label">Students Learning</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Boards Supported</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">95%</span>
+                <span class="stat-label">Improvement Rate</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Boards Section -->
+    <section id="boards" class="boards-section">
+        <div class="container">
+            <h2>Supported Educational Boards</h2>
+            <div class="boards-grid">
+                <div class="board-card">
+                    <h3>CBSE</h3>
+                    <p>Central Board of Secondary Education curriculum with NCERT alignment</p>
+                </div>
+                <div class="board-card">
+                    <h3>ICSE</h3>
+                    <p>Indian Certificate of Secondary Education comprehensive syllabus</p>
+                </div>
+                <div class="board-card">
+                    <h3>State Boards</h3>
+                    <p>Multiple state board curricula including regional language support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Platform Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Syllabus</h3>
+                    <p>AI-generated curriculum adapted to individual learning pace and style</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <h3>Animated Video Lessons</h3>
+                    <p>Engaging animations with real-world applications and examples</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Adaptive Assessments</h3>
+                    <p>Interactive quizzes that adjust difficulty based on performance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Comprehensive analytics dashboard for students, parents, and teachers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Offline Access</h3>
+                    <p>Download content for learning in low connectivity areas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Learning Assistant</h3>
+                    <p>Intelligent recommendations and adaptive learning suggestions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Gamified Learning</h3>
+                    <p>Badges, leaderboards, and achievements to motivate students</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Multilingual Support</h3>
+                    <p>Available in Hindi and multiple regional languages</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Learning Flow -->
+    <section class="learning-flow">
+        <div class="container">
+            <h2>Student Learning Journey</h2>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <h3>Onboarding</h3>
+                    <p>Select your board, grade, and subjects</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <h3>Assessment</h3>
+                    <p>Initial quiz to measure grasping ability</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <h3>Personalization</h3>
+                    <p>AI generates your custom syllabus</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <h3>Learning</h3>
+                    <p>Interactive lessons and exercises</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <h3>Progress</h3>
+                    <p>Track improvement and celebrate achievements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="dashboard-preview">
+        <div class="container">
+            <h2>Dashboard Overview</h2>
+            <div class="dashboard-container">
+                <!-- Student Dashboard -->
+                <div class="dashboard-card">
+                    <h3>Student Dashboard</h3>
+                    <div class="dashboard-content">
+                        <div class="progress-section">
+                            <h4>Current Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <span>Mathematics - 75% Complete</span>
+                        </div>
+                        <div class="achievements">
+                            <h4>Recent Achievements</h4>
+                            <div class="badge">🏆 Quiz Master</div>
+                            <div class="badge">⭐ 7-Day Streak</div>
+                        </div>
+                        <div class="upcoming">
+                            <h4>Upcoming Lessons</h4>
+                            <ul>
+                                <li>Algebra Basics</li>
+                                <li>Geometry Fundamentals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent/Teacher Dashboard -->
+                <div class="dashboard-card">
+                    <h3>Parent/Teacher Dashboard</h3>
+                    <div class="dashboard-content">
+                        <div class="student-overview">
+                            <h4>Student Performance</h4>
+                            <div class="performance-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Average Score</span>
+                                    <span class="metric-value">85%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Time Spent</span>
+                                    <span class="metric-value">2.5 hrs/day</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Completion Rate</span>
+                                    <span class="metric-value">92%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendations">
+                            <h4>AI Recommendations</h4>
+                            <p>Focus on geometry concepts for better understanding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2>Built with Modern Technology</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>ReactJS (Web)</li>
+                        <li>Flutter (Mobile)</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Python + FastAPI</li>
+                        <li>PostgreSQL + MongoDB</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Cloud & AI</h3>
+                    <ul>
+                        <li>AWS / Firebase</li>
+                        <li>AI/ML with Python</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Enhancements -->
+    <section class="future-features">
+        <div class="container">
+            <h2>Coming Soon</h2>
+            <div class="future-grid">
+                <div class="future-item">
+                    <h3>🥽 AR/VR Labs</h3>
+                    <p>Immersive virtual laboratories for science experiments</p>
+                </div>
+                <div class="future-item">
+                    <h3>🤖 AI Tutor Chatbot</h3>
+                    <p>24/7 instant Q&A support with intelligent tutoring</p>
+                </div>
+                <div class="future-item">
+                    <h3>👥 Peer Collaboration</h3>
+                    <p>Connect students with similar learning styles</p>
+                </div>
+                <div class="future-item">
+                    <h3>📊 Advanced Analytics</h3>
+                    <p>Deep insights for teachers and educational institutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Learning?</h2>
+            <p>Join thousands of students already learning smarter, not harder</p>
+            <div class="cta-buttons">
+                <button class="btn-primary-large">Start Free Trial</button>
+                <button class="btn-secondary-large">Schedule Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Smart EdTech-1</h3>
+                    <p>Personalized learning platform for modern education</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Boards</h4>
+                    <ul>
+                        <li>CBSE</li>
+                        <li>ICSE</li>
+                        <li>State Boards</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@smartedtech1.com</p>
+                    <p>Phone: +91 12345 67890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Smart EdTech-1. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase CDN Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+    <!-- Firebase Configuration -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDWXOvYpY-PwmOWlGXe8fsTTiQLGcJpgTQ",
+            authDomain: "studio-4266064708-a46a7.firebaseapp.com",
+            projectId: "studio-4266064708-a46a7",
+            storageBucket: "studio-4266064708-a46a7.firebasestorage.app",
+            messagingSenderId: "988323612405",
+            appId: "1:988323612405:web:9a536479a446b6268667bc"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        // Make Firebase services available globally
+        window.db = firebase.firestore();
+        window.auth = firebase.auth();
+        
+        console.log('🔥 Firebase initialized successfully!');
+    </script>
+
+    <!-- Your main JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
