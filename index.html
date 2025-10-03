@@ -1,360 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart EdTech-1 - Personalized Learning Platform</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Header Navigation -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart EdTech-1 - AI-Powered Learning Platform</title>
+    <meta
+      name="description"
+      content="Complete AI-powered learning platform with adaptive quizzes, progress tracking, and personalized education for CBSE, ICSE, and State Boards"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/dashboard.css" />
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-spinner"></div>
+      <p>Loading Smart EdTech-1...</p>
+    </div>
+
     <header class="header">
-        <nav class="navbar">
-            <div class="nav-brand">
-                <h2>Smart EdTech-1</h2>
-                <span class="tagline">ECTEC-1</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#boards">Boards</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-auth">
-                <button class="btn-login" onclick="showSignInModal()">Login</button>
-                <button class="btn-signup" onclick="showOnboardingForm()">Sign Up</button>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div class="nav-brand">
+          <h2>Smart EdTech-1</h2>
+          <span class="tagline">AI-Powered Learning</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#quiz-demo">Try Quiz</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+        <div class="nav-auth">
+          <button class="btn-login" onclick="showSignInModal()">Login</button>
+          <button class="btn-signup" onclick="showOnboardingForm()">
+            Sign Up
+          </button>
+        </div>
+      </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Landing Page Content (shown when not logged in) -->
+    <div id="landing-page">
+      <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Personalized Learning Platform</h1>
-            <p>Adaptive education for CBSE, ICSE, and State Boards that adapts to your child's learning style</p>
-            <div class="hero-buttons">
-                <button class="btn-primary">Start Learning</button>
-                <button class="btn-secondary">Watch Demo</button>
-            </div>
+          <h1>AI-Powered Personalized Learning</h1>
+          <p>
+            Adaptive quizzes, real-time progress tracking, and AI-driven
+            recommendations for CBSE, ICSE & State Board students
+          </p>
+          <div class="hero-buttons">
+            <button class="btn-primary-large" onclick="showOnboardingForm()">
+              Start Learning Now
+            </button>
+            <button class="btn-secondary-large" onclick="startDemoQuiz()">
+              Try Sample Quiz
+            </button>
+          </div>
+          <div class="hero-features">
+            <div class="feature-pill">🎯 Adaptive AI Quizzes</div>
+            <div class="feature-pill">📊 Real-time Analytics</div>
+            <div class="feature-pill">🏆 Gamification</div>
+          </div>
         </div>
         <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number">50,000+</span>
-                <span class="stat-label">Students Learning</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">15+</span>
-                <span class="stat-label">Boards Supported</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">95%</span>
-                <span class="stat-label">Improvement Rate</span>
-            </div>
+          <div class="stat">
+            <span class="stat-number">50000</span>
+            <span class="stat-label">Students Learning</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">25000</span>
+            <span class="stat-label">Quizzes Completed</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">95</span>
+            <span class="stat-label">Success Rate</span>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Supported Boards Section -->
-    <section id="boards" class="boards-section">
+      <section id="quiz-demo" class="quiz-preview">
         <div class="container">
-            <h2>Supported Educational Boards</h2>
-            <div class="boards-grid">
-                <div class="board-card">
-                    <h3>CBSE</h3>
-                    <p>Central Board of Secondary Education curriculum with NCERT alignment</p>
-                </div>
-                <div class="board-card">
-                    <h3>ICSE</h3>
-                    <p>Indian Certificate of Secondary Education comprehensive syllabus</p>
-                </div>
-                <div class="board-card">
-                    <h3>State Boards</h3>
-                    <p>Multiple state board curricula including regional language support</p>
-                </div>
+          <h2>Experience Our AI-Powered Quiz System</h2>
+          <div class="quiz-demo-container">
+            <div class="quiz-preview-card">
+              <h3>🧮 Mathematics</h3>
+              <p>Adaptive questions that adjust to your level</p>
+              <div class="quiz-stats">
+                <span>⏱️ 5-10 min</span>
+                <span>📝 10 questions</span>
+                <span>🎯 Adaptive difficulty</span>
+              </div>
+              <button
+                class="btn-primary"
+                onclick="startDemoQuiz('mathematics')"
+              >
+                Try Math Quiz
+              </button>
             </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <h2>Platform Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Personalized Syllabus</h3>
-                    <p>AI-generated curriculum adapted to individual learning pace and style</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎥</div>
-                    <h3>Animated Video Lessons</h3>
-                    <p>Engaging animations with real-world applications and examples</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Adaptive Assessments</h3>
-                    <p>Interactive quizzes that adjust difficulty based on performance</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Progress Tracking</h3>
-                    <p>Comprehensive analytics dashboard for students, parents, and teachers</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Offline Access</h3>
-                    <p>Download content for learning in low connectivity areas</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI Learning Assistant</h3>
-                    <p>Intelligent recommendations and adaptive learning suggestions</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3>Gamified Learning</h3>
-                    <p>Badges, leaderboards, and achievements to motivate students</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Multilingual Support</h3>
-                    <p>Available in Hindi and multiple regional languages</p>
-                </div>
+            <div class="quiz-preview-card">
+              <h3>🧪 Science</h3>
+              <p>Interactive science questions with explanations</p>
+              <div class="quiz-stats">
+                <span>⏱️ 5-10 min</span>
+                <span>📝 10 questions</span>
+                <span>💡 Detailed explanations</span>
+              </div>
+              <button class="btn-primary" onclick="startDemoQuiz('science')">
+                Try Science Quiz
+              </button>
             </div>
-        </div>
-    </section>
-
-    <!-- Student Learning Flow -->
-    <section class="learning-flow">
-        <div class="container">
-            <h2>Student Learning Journey</h2>
-            <div class="flow-steps">
-                <div class="flow-step">
-                    <div class="step-number">1</div>
-                    <h3>Onboarding</h3>
-                    <p>Select your board, grade, and subjects</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="step-number">2</div>
-                    <h3>Assessment</h3>
-                    <p>Initial quiz to measure grasping ability</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="step-number">3</div>
-                    <h3>Personalization</h3>
-                    <p>AI generates your custom syllabus</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="step-number">4</div>
-                    <h3>Learning</h3>
-                    <p>Interactive lessons and exercises</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="step-number">5</div>
-                    <h3>Progress</h3>
-                    <p>Track improvement and celebrate achievements</p>
-                </div>
+            <div class="quiz-preview-card">
+              <h3>📚 English</h3>
+              <p>Language skills assessment and improvement</p>
+              <div class="quiz-stats">
+                <span>⏱️ 5-10 min</span>
+                <span>📝 10 questions</span>
+                <span>📖 Vocabulary focus</span>
+              </div>
+              <button class="btn-primary" onclick="startDemoQuiz('english')">
+                Try English Quiz
+              </button>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Dashboard Preview -->
-    <section class="dashboard-preview">
+      <section id="features" class="features-section">
         <div class="container">
-            <h2>Dashboard Overview</h2>
-            <div class="dashboard-container">
-                <!-- Student Dashboard -->
-                <div class="dashboard-card">
-                    <h3>Student Dashboard</h3>
-                    <div class="dashboard-content">
-                        <div class="progress-section">
-                            <h4>Current Progress</h4>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 75%;"></div>
-                            </div>
-                            <span>Mathematics - 75% Complete</span>
-                        </div>
-                        <div class="achievements">
-                            <h4>Recent Achievements</h4>
-                            <div class="badge">🏆 Quiz Master</div>
-                            <div class="badge">⭐ 7-Day Streak</div>
-                        </div>
-                        <div class="upcoming">
-                            <h4>Upcoming Lessons</h4>
-                            <ul>
-                                <li>Algebra Basics</li>
-                                <li>Geometry Fundamentals</li>
-                            </ul>
-                        </div>
+          <h2>Complete Learning Platform Features</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🎯</div>
+              <h3>Adaptive AI Quizzes</h3>
+              <p>
+                Intelligent question selection that adapts to your performance
+                in real-time
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <h3>Real-time Analytics</h3>
+              <p>
+                Comprehensive progress tracking with detailed performance
+                insights
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🏆</div>
+              <h3>Gamification System</h3>
+              <p>
+                Points, badges, streaks, and leaderboards to keep you motivated
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📱</div>
+              <h3>Multi-Device Sync</h3>
+              <p>
+                Seamless experience across desktop, tablet, and mobile devices
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🎓</div>
+              <h3>Personalized Learning</h3>
+              <p>
+                AI-curated content based on your strengths and learning gaps
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>Instant Feedback</h3>
+              <p>
+                Immediate explanations and corrections to accelerate learning
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Student Dashboard (shown when logged in) -->
+    <div id="student-app" style="display: none">
+      <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+          <div class="sidebar-header">
+            <div class="user-avatar">
+              <img
+                id="user-avatar-img"
+                src="https://via.placeholder.com/60"
+                alt="User Avatar"
+              />
+            </div>
+            <div class="user-info">
+              <h3 id="user-name">Student Name</h3>
+              <p id="user-grade-board">Grade • Board</p>
+            </div>
+          </div>
+          <nav class="sidebar-nav">
+            <a
+              href="#"
+              onclick="showDashboardSection('overview')"
+              class="nav-item active"
+            >
+              📊 Overview
+            </a>
+            <a
+              href="#"
+              onclick="showDashboardSection('quizzes')"
+              class="nav-item"
+            >
+              📝 Quizzes
+            </a>
+            <a
+              href="#"
+              onclick="showDashboardSection('progress')"
+              class="nav-item"
+            >
+              📈 Progress
+            </a>
+            <a
+              href="#"
+              onclick="showDashboardSection('achievements')"
+              class="nav-item"
+            >
+              🏆 Achievements
+            </a>
+            <a
+              href="#"
+              onclick="showDashboardSection('settings')"
+              class="nav-item"
+            >
+              ⚙️ Settings
+            </a>
+          </nav>
+          <div class="sidebar-footer">
+            <button class="btn-secondary" onclick="signOutUser()">
+              Sign Out
+            </button>
+          </div>
+        </aside>
+
+        <main class="dashboard-main">
+          <!-- Overview Section -->
+          <section id="dashboard-overview" class="dashboard-section active">
+            <div class="section-header">
+              <h1>Learning Dashboard</h1>
+              <p>Track your progress and continue your learning journey</p>
+            </div>
+
+            <div class="dashboard-grid">
+              <div class="dashboard-card welcome-card">
+                <h3>Welcome back! 👋</h3>
+                <p>Ready to continue your learning journey?</p>
+                <button class="btn-primary" onclick="showQuickQuiz()">
+                  Quick Quiz
+                </button>
+              </div>
+
+              <div class="dashboard-card stats-card">
+                <h3>Your Stats</h3>
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-number" id="total-quizzes">0</span>
+                    <span class="stat-label">Quizzes Taken</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number" id="average-score">0%</span>
+                    <span class="stat-label">Average Score</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number" id="current-streak">0</span>
+                    <span class="stat-label">Day Streak</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number" id="total-points">0</span>
+                    <span class="stat-label">Total Points</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dashboard-card progress-card">
+                <h3>Subject Progress</h3>
+                <div class="progress-list">
+                  <div class="progress-item">
+                    <span class="subject-name">Mathematics</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 75%"></div>
                     </div>
-                </div>
-
-                <!-- Parent/Teacher Dashboard -->
-                <div class="dashboard-card">
-                    <h3>Parent/Teacher Dashboard</h3>
-                    <div class="dashboard-content">
-                        <div class="student-overview">
-                            <h4>Student Performance</h4>
-                            <div class="performance-metrics">
-                                <div class="metric">
-                                    <span class="metric-label">Average Score</span>
-                                    <span class="metric-value">85%</span>
-                                </div>
-                                <div class="metric">
-                                    <span class="metric-label">Time Spent</span>
-                                    <span class="metric-value">2.5 hrs/day</span>
-                                </div>
-                                <div class="metric">
-                                    <span class="metric-label">Completion Rate</span>
-                                    <span class="metric-value">92%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="recommendations">
-                            <h4>AI Recommendations</h4>
-                            <p>Focus on geometry concepts for better understanding</p>
-                        </div>
+                    <span class="progress-percent">75%</span>
+                  </div>
+                  <div class="progress-item">
+                    <span class="subject-name">Science</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 60%"></div>
                     </div>
+                    <span class="progress-percent">60%</span>
+                  </div>
+                  <div class="progress-item">
+                    <span class="subject-name">English</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="progress-percent">85%</span>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </section>
+              </div>
 
-    <!-- Tech Stack Section -->
-    <section class="tech-stack">
-        <div class="container">
-            <h2>Built with Modern Technology</h2>
-            <div class="tech-grid">
-                <div class="tech-category">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>ReactJS (Web)</li>
-                        <li>Flutter (Mobile)</li>
-                    </ul>
+              <div class="dashboard-card recent-activity">
+                <h3>Recent Activity</h3>
+                <div class="activity-list" id="activity-list">
+                  <div class="activity-item">
+                    <div class="activity-icon">📝</div>
+                    <div class="activity-details">
+                      <p>Completed Math Quiz - Algebra</p>
+                      <span class="activity-time">2 hours ago</span>
+                    </div>
+                    <div class="activity-score">Score: 85%</div>
+                  </div>
                 </div>
-                <div class="tech-category">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>Python + FastAPI</li>
-                        <li>PostgreSQL + MongoDB</li>
-                    </ul>
-                </div>
-                <div class="tech-category">
-                    <h3>Cloud & AI</h3>
-                    <ul>
-                        <li>AWS / Firebase</li>
-                        <li>AI/ML with Python</li>
-                    </ul>
-                </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </section>
 
-    <!-- Future Enhancements -->
-    <section class="future-features">
-        <div class="container">
-            <h2>Coming Soon</h2>
-            <div class="future-grid">
-                <div class="future-item">
-                    <h3>🥽 AR/VR Labs</h3>
-                    <p>Immersive virtual laboratories for science experiments</p>
-                </div>
-                <div class="future-item">
-                    <h3>🤖 AI Tutor Chatbot</h3>
-                    <p>24/7 instant Q&A support with intelligent tutoring</p>
-                </div>
-                <div class="future-item">
-                    <h3>👥 Peer Collaboration</h3>
-                    <p>Connect students with similar learning styles</p>
-                </div>
-                <div class="future-item">
-                    <h3>📊 Advanced Analytics</h3>
-                    <p>Deep insights for teachers and educational institutions</p>
-                </div>
+          <!-- Quizzes Section -->
+          <section id="dashboard-quizzes" class="dashboard-section">
+            <div class="section-header">
+              <h1>Available Quizzes</h1>
+              <p>Choose a subject to start practicing</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Transform Learning?</h2>
-            <p>Join thousands of students already learning smarter, not harder</p>
-            <div class="cta-buttons">
-                <button class="btn-primary-large">Start Free Trial</button>
-                <button class="btn-secondary-large">Schedule Demo</button>
-            </div>
-        </div>
-    </section>
+            <div class="quizzes-grid">
+              <div class="quiz-card" onclick="startQuiz('mathematics')">
+                <div class="quiz-icon">🧮</div>
+                <h3>Mathematics</h3>
+                <p>Algebra, Geometry, Arithmetic</p>
+                <div class="quiz-info">
+                  <span>📝 50+ Questions</span>
+                  <span>⏱️ Adaptive timing</span>
+                </div>
+              </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Smart EdTech-1</h3>
-                    <p>Personalized learning platform for modern education</p>
+              <div class="quiz-card" onclick="startQuiz('science')">
+                <div class="quiz-icon">🧪</div>
+                <h3>Science</h3>
+                <p>Physics, Chemistry, Biology</p>
+                <div class="quiz-info">
+                  <span>📝 45+ Questions</span>
+                  <span>💡 With explanations</span>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#support">Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Boards</h4>
-                    <ul>
-                        <li>CBSE</li>
-                        <li>ICSE</li>
-                        <li>State Boards</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@smartedtech1.com</p>
-                    <p>Phone: +91 12345 67890</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Smart EdTech-1. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+              </div>
 
-    <!-- Firebase CDN Scripts -->
+              <div class="quiz-card" onclick="startQuiz('english')">
+                <div class="quiz-icon">📚</div>
+                <h3>English</h3>
+                <p>Grammar, Vocabulary, Reading</p>
+                <div class="quiz-info">
+                  <span>📝 40+ Questions</span>
+                  <span>📖 Comprehensive</span>
+                </div>
+              </div>
+
+              <div class="quiz-card" onclick="startQuiz('social')">
+                <div class="quiz-icon">🌍</div>
+                <h3>Social Studies</h3>
+                <p>History, Geography, Civics</p>
+                <div class="quiz-info">
+                  <span>📝 35+ Questions</span>
+                  <span>🗺️ Interactive</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Progress Section -->
+          <section id="dashboard-progress" class="dashboard-section">
+            <div class="section-header">
+              <h1>Learning Progress</h1>
+              <p>Detailed analytics of your learning journey</p>
+            </div>
+
+            <div class="progress-analytics">
+              <div class="analytics-card">
+                <h3>Performance Trends</h3>
+                <canvas
+                  id="performance-chart"
+                  width="400"
+                  height="200"
+                ></canvas>
+              </div>
+
+              <div class="analytics-card">
+                <h3>Subject Mastery</h3>
+                <div class="mastery-levels">
+                  <div class="mastery-item">
+                    <span class="subject">Mathematics</span>
+                    <div class="mastery-bar">
+                      <div class="mastery-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="mastery-level">Advanced</span>
+                  </div>
+                  <div class="mastery-item">
+                    <span class="subject">Science</span>
+                    <div class="mastery-bar">
+                      <div class="mastery-fill" style="width: 60%"></div>
+                    </div>
+                    <span class="mastery-level">Intermediate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Achievements Section -->
+          <section id="dashboard-achievements" class="dashboard-section">
+            <div class="section-header">
+              <h1>Achievements & Rewards</h1>
+              <p>Your learning milestones and earned badges</p>
+            </div>
+
+            <div class="achievements-container">
+              <div class="achievements-grid" id="achievements-grid">
+                <div class="achievement-badge earned">
+                  <div class="badge-icon">🚀</div>
+                  <h4>Quick Starter</h4>
+                  <p>Completed first quiz</p>
+                </div>
+                <div class="achievement-badge earned">
+                  <div class="badge-icon">🎯</div>
+                  <h4>Perfect Score</h4>
+                  <p>Got 100% on a quiz</p>
+                </div>
+                <div class="achievement-badge">
+                  <div class="badge-icon">🔥</div>
+                  <h4>7-Day Streak</h4>
+                  <p>Learn for 7 days straight</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="modal-overlay">
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h2 id="quiz-title">Mathematics Quiz</h2>
+          <div class="quiz-progress">
+            <span id="question-counter">1 / 10</span>
+            <div class="progress-bar">
+              <div
+                id="quiz-progress-bar"
+                class="progress-fill"
+                style="width: 10%"
+              ></div>
+            </div>
+          </div>
+          <button class="quiz-close" onclick="closeQuiz()">&times;</button>
+        </div>
+        <div class="quiz-body">
+          <div class="question-container">
+            <h3 id="question-text">Loading question...</h3>
+            <div id="question-options" class="options-container">
+              <!-- Options will be populated dynamically -->
+            </div>
+          </div>
+          <div class="quiz-controls">
+            <button
+              id="prev-btn"
+              class="btn-secondary"
+              onclick="previousQuestion()"
+              disabled
+            >
+              Previous
+            </button>
+            <button
+              id="next-btn"
+              class="btn-primary"
+              onclick="nextQuestion()"
+              disabled
+            >
+              Next
+            </button>
+            <button
+              id="submit-btn"
+              class="btn-success"
+              onclick="submitQuiz()"
+              style="display: none"
+            >
+              Submit Quiz
+            </button>
+          </div>
+        </div>
+        <div class="quiz-footer">
+          <div class="quiz-stats">
+            <span id="time-remaining">Time: 05:00</span>
+            <span id="quiz-score">Score: 0 / 0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
 
-    <!-- Firebase Configuration -->
-    <script>
-        // Your Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyDWXOvYpY-PwmOWlGXe8fsTTiQLGcJpgTQ",
-            authDomain: "studio-4266064708-a46a7.firebaseapp.com",
-            projectId: "studio-4266064708-a46a7",
-            storageBucket: "studio-4266064708-a46a7.firebasestorage.app",
-            messagingSenderId: "988323612405",
-            appId: "1:988323612405:web:9a536479a446b6268667bc"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        
-        // Make Firebase services available globally
-        window.db = firebase.firestore();
-        window.auth = firebase.auth();
-        
-        console.log('🔥 Firebase initialized successfully!');
-    </script>
-
-    <!-- Your main JavaScript file -->
-    <script src="script.js"></script>
-</body>
+    <!-- Your Enhanced JavaScript Files -->
+    <script src="js/firebase-config.js"></script>
+    <script src="data/quiz-questions.js"></script>
+    <script src="js/quiz-engine.js"></script>
+    <script src="js/gamification.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
